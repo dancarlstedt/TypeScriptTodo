@@ -20,7 +20,7 @@ var app;
             return TodoController;
         })();
         angular.module("app.todo")
-            .controller("app.todo.TodoController", TodoController);
+            .controller("TodoController", TodoController);
     })(todo = app.todo || (app.todo = {}));
 })(app || (app = {}));
 //# sourceMappingURL=todo.controller.js.map

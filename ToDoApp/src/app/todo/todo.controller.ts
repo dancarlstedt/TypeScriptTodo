@@ -24,5 +24,5 @@ module app.todo {
     }
 
     angular.module("app.todo")
-        .controller("app.todo.TodoController", TodoController);
+        .controller("TodoController", TodoController);
 }

@@ -23,4 +23,4 @@ var app;
             .service("app.services.TodoService", TodoService);
     })(services = app.services || (app.services = {}));
 })(app || (app = {}));
-//# sourceMappingURL=todo.service.js.map
+//# sourceMappingURL=services.todo.js.map

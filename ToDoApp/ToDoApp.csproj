@@ -99,6 +99,7 @@
     <Content Include="index.html" />
     <Content Include="src\typings\jquery\jquery.d.ts" />
     <Content Include="src\typings\tsd.d.ts" />
+    <Content Include="src\vendor\angular\angular-route.js" />
     <Content Include="src\vendor\angular\angular.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -113,8 +114,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="src\tsd.json" />
-    <Content Include="src\tsconfig.json" />
+    <Content Include="tsd.json" />
+    <Content Include="tsconfig.json" />
+    <Content Include="package.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -127,7 +129,7 @@
     <TypeScriptCompile Include="src\app\app.module.ts" />
     <TypeScriptCompile Include="src\app\core\core.module.ts" />
     <TypeScriptCompile Include="src\app\services\services.module.ts" />
-    <TypeScriptCompile Include="src\app\services\todo.service.ts" />
+    <TypeScriptCompile Include="src\app\services\services.todo.ts" />
     <TypeScriptCompile Include="src\app\todo\todo.controller.ts" />
     <TypeScriptCompile Include="src\app\todo\todo.module.ts" />
     <TypeScriptCompile Include="src\app\todo\todo.routes.ts" />

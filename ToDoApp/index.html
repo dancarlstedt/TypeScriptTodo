@@ -7,21 +7,32 @@
 <body>
     <header>
         <h1>
-            TodoController List {{1 + 1}}
+            TodoController List
         </h1>
     </header>
 
-    <ng-view></ng-view>
+    <div ng-controller="TodoController as vm" ng-cloak>
+        <div ng-repeat="item in vm.todoItems">
+            <h4 ng-bind="item.description"></h4>
+            <h5 ng-bind="item.isDone"></h5>
+            <h6 ng-bind="item.id"></h6>
+        </div>
+    </div>
 
     <!-- Vendor -->
     <script src="src/vendor/angular/angular.js"></script>
+    <script src="src/vendor/angular/angular-route.js"></script>
 
     <!-- App -->
     <script src="src/app/app.module.js"></script>
     <script src="src/app/app.config.js"></script>
+
+    <script src="src/app/services/services.module.js"></script>
+    <script src="src/app/services/services.todo.js"></script>
+
     <script src="src/app/core/core.module.js"></script>
+
     <script src="src/app/todo/todo.module.js"></script>
-    <script src="src/app/services/todo.service.js"></script>
     <script src="src/app/todo/todo.controller.js"></script>
 </body>
 </html>

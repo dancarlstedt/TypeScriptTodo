@@ -2,5 +2,5 @@
 
 ((): void => {
     angular
-        .module('app', ['app.core', 'app.services']);
+        .module('app', ['app.core', 'app.services', 'app.todo']);
 })();
