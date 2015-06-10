@@ -1,3 +1,6 @@
-﻿(): void => {
-    var h: string = "Hello";
-};
+﻿/// <reference path="../typings/tsd.d.ts" />
+
+((): void => {
+    angular
+        .module('app', ['app.core', 'app.services']);
+})();

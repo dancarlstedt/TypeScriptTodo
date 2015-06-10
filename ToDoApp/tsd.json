@@ -6,7 +6,28 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "angularjs/angular.d.ts": {
-      "commit": "8c7444882a2bc2ab87387f8f736a7d97e89b9c90"
+      "commit": "52dc8fc39354569838b7bc09e24df690b852b4d9"
+    },
+    "jquery/jquery.d.ts": {
+      "commit": "2c53b9b2d13523d5d9cef4866ab1a22a6fee1ba8"
+    },
+      "angularjs/angular-sanitize.d.ts": {
+      "commit": "52dc8fc39354569838b7bc09e24df690b852b4d9"
+    },
+    "angularjs/angular-cookies.d.ts": {
+      "commit": "52dc8fc39354569838b7bc09e24df690b852b4d9"
+    },
+    "angularjs/angular-resource.d.ts": {
+      "commit": "52dc8fc39354569838b7bc09e24df690b852b4d9"
+    },
+    "angularjs/angular-animate.d.ts": {
+      "commit": "52dc8fc39354569838b7bc09e24df690b852b4d9"
+    },
+    "angularjs/angular-route.d.ts": {
+      "commit": "52dc8fc39354569838b7bc09e24df690b852b4d9"
+    },
+    "angularjs/angular-mocks.d.ts": {
+      "commit": "52dc8fc39354569838b7bc09e24df690b852b4d9"
     }
   }
 }
