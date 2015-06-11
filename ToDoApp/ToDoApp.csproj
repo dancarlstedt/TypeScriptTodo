@@ -97,6 +97,8 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="index.html" />
+    <Content Include="src\content\css\bootstrap.css" />
+    <Content Include="src\content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="src\typings\jquery\jquery.d.ts" />
     <Content Include="src\typings\tsd.d.ts" />
     <Content Include="src\vendor\angular\angular-route.js" />
@@ -117,6 +119,10 @@
     <Content Include="tsd.json" />
     <Content Include="tsconfig.json" />
     <Content Include="package.json" />
+    <Content Include="src\content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="src\content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="src\content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="src\content\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
