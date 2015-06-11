@@ -115,6 +115,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="src\app\**\*.map"/>
+    <Content Include="src\app\**\*.js" />
     <Content Include="packages.config" />
     <Content Include="tsd.json" />
     <Content Include="tsconfig.json" />
