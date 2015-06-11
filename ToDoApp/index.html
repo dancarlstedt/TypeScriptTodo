@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" ng-app="app">
 <head>
+    <base href="/" />
     <link rel="stylesheet" href="src/content/css/bootstrap.css" />
     <style>
         .edit-btn {
@@ -10,42 +11,32 @@
         .list-item {
             margin-bottom: 15px;
         }
+
+        .give-me-space {
+            margin-top: 90px;
+        }
+
+        div.navbar-right {
+            color: #FFFFFF;
+        }
     </style>
     <title>TodoController List</title>
 </head>
 <body>
-    <header class="navbar navbar-inverse">
-        <h1 class="navbar-brand">
-            The Todo List
-        </h1>
-    </header>
-    <div class="container">
-        <div ng-controller="TodoController as vm" ng-cloak>
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>To be done</h2>
-                </div>
+    <header class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/#/">The TypeScript Todo List</a>
             </div>
-            <div class="row">
-                <ul id="todo-items" class="list-unstyled col-lg-6">
-                    <li ng-repeat="item in vm.todoItems" class="list-item">
-                        <form>
-                            <div class="input-group input-group-lg">
-                                <span class="input-group-addon">
-                                    <input type="checkbox" ng-model="item.isDone">
-                                </span>
-                                <input class="form-control" ng-model="item.description">
-                                <span class="input-group-addon">
-                                    <span class="edit-btn btn glyphicon glyphicon-edit"></span>
-                                </span>
-                                <!--<span class="glyphicon glyphicon-edit"></span>-->
-                            </div>
-                        </form>
-                        <!--{{item | json}}-->
-                    </li>
+            <div class="navbar-right">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/#/done">What Have I done?</a></li>
                 </ul>
             </div>
         </div>
+    </header>
+    <div class="container give-me-space">
+        <div ng-view></div>
     </div>
 
     <!-- Vendor -->
@@ -62,6 +53,7 @@
     <script src="src/app/core/core.module.js"></script>
 
     <script src="src/app/todo/todo.module.js"></script>
+    <script src="src/app/todo/todo.routes.js"></script>
     <script src="src/app/todo/todo.controller.js"></script>
 </body>
 </html>

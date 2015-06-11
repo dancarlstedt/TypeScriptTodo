@@ -97,6 +97,7 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="index.html" />
+    <Content Include="src\app\todo\todo.html" />
     <Content Include="src\content\css\bootstrap.css" />
     <Content Include="src\content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="src\typings\jquery\jquery.d.ts" />
@@ -115,7 +116,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="src\app\**\*.map"/>
+    <Content Include="src\app\**\*.map" />
     <Content Include="src\app\**\*.js" />
     <Content Include="packages.config" />
     <Content Include="tsd.json" />
@@ -141,10 +142,15 @@
     <TypeScriptCompile Include="src\app\todo\todo.controller.ts" />
     <TypeScriptCompile Include="src\app\todo\todo.module.ts" />
     <TypeScriptCompile Include="src\app\todo\todo.routes.ts" />
+    <TypeScriptCompile Include="src\typings\angularjs\angular-animate.d.ts" />
+    <TypeScriptCompile Include="src\typings\angularjs\angular-cookies.d.ts" />
+    <TypeScriptCompile Include="src\typings\angularjs\angular-mocks.d.ts" />
+    <TypeScriptCompile Include="src\typings\angularjs\angular-resource.d.ts" />
+    <TypeScriptCompile Include="src\typings\angularjs\angular-route.d.ts" />
+    <TypeScriptCompile Include="src\typings\angularjs\angular-sanitize.d.ts" />
+    <TypeScriptCompile Include="src\typings\angularjs\angular.d.ts" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src\typings\angularjs\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -157,7 +163,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>2745</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

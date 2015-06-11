@@ -4,7 +4,8 @@
     // remove the ugly # symbol
     config.$inject = ['$locationProvider'];
     function config($locationProvider) {
-        $locationProvider.html5Mode(true);
+        // TODO: Weird crashes
+        //$locationProvider.html5Mode(true);
     }
     angular.module('app')
         .config(config);

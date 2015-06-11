@@ -1,16 +1,20 @@
 ﻿((): void => {
     function config($routeProvider: ng.route.IRouteProvider): void {
-        $routeProvider.when('/todo/:id', {
-            template: '<h1>Hello Route</>',
-            controller: (): void => {
-            },
+        $routeProvider
+            .when('/', {
+            templateUrl: "src/app/todo/todo.html",
+            controller: 'TodoController',
             controllerAs: 'vm'
         })
-        .otherwise('/');
+            .when('/done',
+            {
+                template: '<h1>Done this yo</h1>'
+
+            }).
+            otherwise({ redirectTo: '/' });
     }
 
     angular.module('app.todo')
         .config(config);
-
     config.$inject = ['$routeProvider'];
 })();
