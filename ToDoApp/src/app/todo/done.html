@@ -1,0 +1,9 @@
+﻿<div ng-cloak class="row">
+    <div class="col-lg-8">
+    <h2>You've completed <span ng-bind="vm.totalDone"></span> items!</h2>
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="item in vm.doneItems" ng-bind="item.description">
+            </li>
+        </ul>
+    </div>
+</div>
