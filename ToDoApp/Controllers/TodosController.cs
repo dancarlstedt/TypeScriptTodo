@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Formatting;
-using System.Threading.Tasks;
-using System.Web.Http;
-using System.Web.Http.Results;
-using ToDoApp.Models;
-using System.Linq;
-
-namespace ToDoApp.Controllers
+﻿namespace ToDoApp.Controllers
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Net;
+    using System.Net.Http;
+    using System.Net.Http.Formatting;
+    using System.Web.Http;
+
+    using ToDoApp.Models;
+
     public class TodosController : ApiController
     {
         private static List<TodoItem> _todoItems = new List<TodoItem>();

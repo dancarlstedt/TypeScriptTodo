@@ -172,8 +172,10 @@ ClientBin/
 node_modules/
 orleans.codegen.cs
 
-#Definitely Typed Typings
+#TypeScript Stuff
 typings
+**/src/app/**/*.map
+**/src/app/**/*.js
 
 # RIA/Silverlight projects
 Generated_Code/
