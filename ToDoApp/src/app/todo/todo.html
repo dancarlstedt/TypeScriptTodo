@@ -6,7 +6,7 @@
     </div>
 
     <div class="row">
-        <form name="todos" ng-submit="vm.save()">
+        <form name="todoform" ng-submit="vm.saveList()" novalidate>
             <div class="form-group" ng-repeat="item in vm.todoItems">
                 <div class="input-group input-group-lg">
                     <span class="input-group-addon">
@@ -18,21 +18,8 @@
                     </span>
                 </div>
             </div>
-            <button type="submit" ng-disabled="todos.$pristine" class="btn btn-danger">Save List</button>
+            <button type="submit" ng-disabled="todoform.$pristine" ng-click="vm.saveList(todoform)" class="btn btn-danger">Save List</button>
             <button class="btn btn-info" ng-click="vm.addItem()">Add Item</button>
         </form>
-        <!--<ul id="todo-items" class="list-unstyled col-lg-8">
-            <li ng-repeat="item in vm.todoItems" class="list-item">
-                <div class="input-group input-group-lg">
-                    <span class="input-group-addon">
-                        <input type="checkbox" ng-model="item.isDone">
-                    </span>
-                    <input class="form-control" ng-class="{deleted: item.isDone}" ng-model="item.description">
-                    <span class="input-group-addon">
-                        <span class="edit-btn btn glyphicon glyphicon-remove" ng-click="vm.removeItem($index)"></span>
-                    </span>
-                </div>
-            </li>
-        </ul>-->
     </div>
 </div>

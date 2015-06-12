@@ -19,7 +19,6 @@ var app;
                 // typically would call service to delete then remove from UI after 
                 // service returns OK instead of NotFound or another error.
                 this.todoItems.splice(indexToRemove, 1);
-                this.anythingDirty = true;
             };
             TodoController.prototype.addItem = function () {
                 this.todoItems.push({
@@ -27,10 +26,10 @@ var app;
                     isDone: false,
                     description: ''
                 });
-                this.anythingDirty = true;
             };
-            TodoController.prototype.saveList = function () {
+            TodoController.prototype.saveList = function (form) {
                 this.todoService.saveList(this.todoItems);
+                form.$setPristine();
             };
             TodoController.$inject = ["app.services.TodoService"];
             return TodoController;

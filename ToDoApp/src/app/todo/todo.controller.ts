@@ -6,12 +6,11 @@ module app.todo {
         todoItems: ITodoItem[];
         removeItem(indexToRemove: number): void;
         addItem(): void;
-        saveList(): void;
+        saveList(form: ng.IFormController): void;
     }
 
     class TodoController implements ITodoController {
         todoItems: ITodoItem[];
-        anythingDirty: boolean;
 
         static $inject: string[] = ["app.services.TodoService"];
         constructor(private todoService: app.services.ITodoService) {
@@ -29,8 +28,7 @@ module app.todo {
             // typically would call service to delete then remove from UI after 
             // service returns OK instead of NotFound or another error.
             this.todoItems.splice(indexToRemove, 1);
-
-            this.anythingDirty = true
+            
         }
 
         addItem(): void {
@@ -40,11 +38,11 @@ module app.todo {
                 description: ''
             });
 
-            this.anythingDirty = true;
         }
 
-        saveList(): void {
+        saveList(form: ng.IFormController): void {
             this.todoService.saveList(this.todoItems);
+            form.$setPristine();
         }
     }
 
