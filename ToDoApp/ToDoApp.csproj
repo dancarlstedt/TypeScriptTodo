@@ -116,8 +116,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="src\app\**\*.map" />
-    <Content Include="src\app\**\*.js" />
     <Content Include="packages.config" />
     <Content Include="tsd.json" />
     <Content Include="tsconfig.json" />
@@ -139,6 +137,7 @@
     <TypeScriptCompile Include="src\app\core\core.module.ts" />
     <TypeScriptCompile Include="src\app\services\services.module.ts" />
     <TypeScriptCompile Include="src\app\services\services.todo.ts" />
+    <TypeScriptCompile Include="src\app\todo\done.controller.ts" />
     <TypeScriptCompile Include="src\app\todo\todo.controller.ts" />
     <TypeScriptCompile Include="src\app\todo\todo.module.ts" />
     <TypeScriptCompile Include="src\app\todo\todo.routes.ts" />
@@ -177,9 +176,7 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. Other similar extension points exist, see Microsoft.Common.targets. <Target Name="BeforeBuild">
   </Target>
   <Target Name="AfterBuild">
   </Target>
