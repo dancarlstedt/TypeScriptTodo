@@ -15,6 +15,23 @@ var app;
                     _this.todoItems = todoItems;
                 });
             };
+            TodoController.prototype.removeItem = function (indexToRemove) {
+                // typically would call service to delete then remove from UI after 
+                // service returns OK instead of NotFound or another error.
+                this.todoItems.splice(indexToRemove, 1);
+                this.anythingDirty = true;
+            };
+            TodoController.prototype.addItem = function () {
+                this.todoItems.push({
+                    id: 0,
+                    isDone: false,
+                    description: ''
+                });
+                this.anythingDirty = true;
+            };
+            TodoController.prototype.saveList = function () {
+                this.todoService.saveList(this.todoItems);
+            };
             TodoController.$inject = ["app.services.TodoService"];
             return TodoController;
         })();

@@ -8,12 +8,13 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Results;
 using ToDoApp.Models;
+using System.Linq;
 
 namespace ToDoApp.Controllers
 {
     public class TodosController : ApiController
     {
-        private static Dictionary<int, TodoItem> _todoItems = new Dictionary<int, TodoItem>();
+        private static List<TodoItem> _todoItems = new List<TodoItem>();
 
         static TodosController()
         {
@@ -23,13 +24,13 @@ namespace ToDoApp.Controllers
         private static void InitializeDefaultTodos()
         {
             _todoItems.Add(
-                1, new TodoItem()
+                new TodoItem()
                 {
                     Id = 1,
                     Description = "Learn TypeScript"
                 });
 
-            _todoItems.Add(2, new TodoItem()
+            _todoItems.Add(new TodoItem()
             {
                 Id = 2,
                 Description = "Rewrite Rogers Import App"
@@ -39,52 +40,45 @@ namespace ToDoApp.Controllers
         // GET api/<controller>
         public IEnumerable<TodoItem> Get()
         {
-            return _todoItems.Values;
-        }
-
-        // GET api/<controller>/5
-        public IHttpActionResult Get(int id)
-        {
-            if (_todoItems.ContainsKey(id))
-            {
-                return Ok(_todoItems[id]);
-            }
-            return NotFound();
+            return _todoItems;
         }
 
         // POST api/<controller>
-        public HttpResponseMessage Post([FromBody]TodoItem item)
+        public HttpResponseMessage Post([FromBody]TodoItem[] items)
         {
-            // assuming model state is valid
-            int maxTodoId = _todoItems.Max(x => x.Key);
-            var todoId = maxTodoId + 1;
-            item.Id = todoId;
+            var maxId = items.Max(x => x.Id);
+            _todoItems.Clear();
 
-            _todoItems.Add(todoId, item);
+            // add new
+            var newItems = items.Where(x => x.Id <= 0);
+            var nextId = maxId + 1;
+            foreach (var item in newItems)
+            {
+                item.Id = nextId;
+                nextId++;
+            }
+
+            _todoItems.AddRange(items.OrderBy(x => x.Id));
 
             var response = new HttpResponseMessage(HttpStatusCode.Created)
             {
-                Content = new ObjectContent(typeof(TodoItem), item, new JsonMediaTypeFormatter())
+                Content = new ObjectContent(typeof(TodoItem[]), items, new JsonMediaTypeFormatter())
             };
 
             return response;
         }
 
-        // PUT api/<controller>/5
-        public IHttpActionResult Put(int id, [FromBody]TodoItem item)
-        {
-            if (_todoItems.ContainsKey(item.Id))
-            {
-                _todoItems[id] = item;
-                return Ok(item);
-            }
-            return NotFound();
-
-        }
-
         // DELETE api/<controller>/5
-        public void Delete(int id)
+        public IHttpActionResult Delete(int id)
         {
+            var itemToDelete = _todoItems.Single(x => x.Id == id);
+            if (itemToDelete != null)
+            {
+                _todoItems.Remove(itemToDelete);
+                return Ok();
+            }
+
+            return NotFound();
         }
     }
 }

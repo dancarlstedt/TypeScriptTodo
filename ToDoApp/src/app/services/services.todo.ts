@@ -1,9 +1,10 @@
-﻿// Install the angularjs.TypeScript.DefinitelyTyped NuGet package
-module app.services {
+﻿module app.services {
     "use strict";
 
     export interface ITodoService {
         getTodoItems: () => ng.IPromise<ITodoItem[]>;
+        getDoneItems(): ng.IPromise<ITodoItem[]>;
+        saveList(list: ITodoItem[]): void;
     }
 
     export interface ITodoItem {
@@ -23,9 +24,21 @@ module app.services {
         getTodoItems(): ng.IPromise<ITodoItem[]> {
             return this.$http
                 .get(this.todoUrl)
-                .then((response: ng.IHttpPromiseCallbackArg<ITodoItem[]>) : ITodoItem[] => {
-                    return response.data;
-                });
+                .then((response: ng.IHttpPromiseCallbackArg<ITodoItem[]>): ITodoItem[]=> {
+                return response.data;
+            });
+        }
+
+        getDoneItems(): ng.IPromise<ITodoItem[]> {
+            return this.getTodoItems()
+                .then((result: ITodoItem[]) => {
+                return result.filter((item) => item.isDone);
+            });
+        }
+
+        saveList(list: ITodoItem[]) {
+            // fire and forget
+            this.$http.post(this.todoUrl, list);
         }
     }
 

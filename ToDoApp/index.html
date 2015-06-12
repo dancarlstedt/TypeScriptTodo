@@ -7,15 +7,15 @@
         .edit-btn {
             padding: 0;
         }
-
         .list-item {
             margin-bottom: 15px;
         }
-
         .give-me-space {
-            margin-top: 90px;
+            margin-top: 60px;
         }
-
+        .deleted {
+            text-decoration: line-through; 
+        }
         div.navbar-right {
             color: #FFFFFF;
         }
@@ -23,18 +23,7 @@
     <title>TodoController List</title>
 </head>
 <body>
-    <header class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/#/">The TypeScript Todo List</a>
-            </div>
-            <div class="navbar-right">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/#/done">What Have I done?</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
+    <div ng-include="'src/app/layout/topnav.html'"></div>
     <div class="container give-me-space">
         <div ng-view></div>
     </div>
@@ -55,5 +44,6 @@
     <script src="src/app/todo/todo.module.js"></script>
     <script src="src/app/todo/todo.routes.js"></script>
     <script src="src/app/todo/todo.controller.js"></script>
+    <script src="src/app/todo/done.controller.js"></script>
 </body>
 </html>

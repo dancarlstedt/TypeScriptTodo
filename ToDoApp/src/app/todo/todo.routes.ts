@@ -8,7 +8,9 @@
         })
             .when('/done',
             {
-                template: '<h1>Done this yo</h1>'
+                templateUrl: 'src/app/todo/done.html',
+                controller: 'DoneController',
+                controllerAs : 'vm'
 
             }).
             otherwise({ redirectTo: '/' });

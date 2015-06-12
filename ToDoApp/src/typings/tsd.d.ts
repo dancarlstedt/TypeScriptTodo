@@ -6,3 +6,4 @@
 /// <reference path="angularjs/angular-resource.d.ts" />
 /// <reference path="angularjs/angular-route.d.ts" />
 /// <reference path="angularjs/angular-sanitize.d.ts" />
+/// <reference path="../app/services/services.todo.ts" />

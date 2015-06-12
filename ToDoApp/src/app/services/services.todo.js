@@ -1,4 +1,3 @@
-// Install the angularjs.TypeScript.DefinitelyTyped NuGet package
 var app;
 (function (app) {
     var services;
@@ -15,6 +14,16 @@ var app;
                     .then(function (response) {
                     return response.data;
                 });
+            };
+            TodoService.prototype.getDoneItems = function () {
+                return this.getTodoItems()
+                    .then(function (result) {
+                    return result.filter(function (item) { return item.isDone; });
+                });
+            };
+            TodoService.prototype.saveList = function (list) {
+                // fire and forget
+                this.$http.post(this.todoUrl, list);
             };
             TodoService.$inject = ["$http"];
             return TodoService;
