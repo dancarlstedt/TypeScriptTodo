@@ -6,7 +6,22 @@
     </div>
 
     <div class="row">
-        <ul id="todo-items" class="list-unstyled col-lg-8">
+        <form name="todos" ng-submit="vm.save()">
+            <div class="form-group" ng-repeat="item in vm.todoItems">
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon">
+                        <input type="checkbox" ng-model="item.isDone">
+                    </span>
+                    <input type="text" class="form-control" id="description" ng-class="{deleted: item.isDone}" ng-model="item.description" placeholder="What needs to be done?">
+                    <span class="input-group-addon">
+                        <span class="edit-btn btn glyphicon glyphicon-remove" ng-click="vm.removeItem($index)"></span>
+                    </span>
+                </div>
+            </div>
+            <button type="submit" ng-disabled="todos.$pristine" class="btn btn-danger">Save List</button>
+            <button class="btn btn-info" ng-click="vm.addItem()">Add Item</button>
+        </form>
+        <!--<ul id="todo-items" class="list-unstyled col-lg-8">
             <li ng-repeat="item in vm.todoItems" class="list-item">
                 <div class="input-group input-group-lg">
                     <span class="input-group-addon">
@@ -18,14 +33,6 @@
                     </span>
                 </div>
             </li>
-        </ul>
-    </div>
-    <div class="row">
-        <div class="col-lg-1">
-            <button class="btn btn-info" ng-click="vm.addItem()">Add Item</button>
-        </div>
-        <div class="col-lg-1">
-            <button class="btn btn-danger" ng-click="vm.saveList()">Save List</button>
-        </div>
+        </ul>-->
     </div>
 </div>
