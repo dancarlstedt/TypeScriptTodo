@@ -97,6 +97,7 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="index.html" />
+    <Content Include="src\app\todo\done.html" />
     <Content Include="src\app\todo\todo.html" />
     <Content Include="src\content\css\bootstrap.css" />
     <Content Include="src\content\fonts\glyphicons-halflings-regular.svg" />
