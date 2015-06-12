@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "install": "tsd reinstall",
+    "postinstall": "tsd reinstall",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
